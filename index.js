@@ -1,4 +1,4 @@
-onst http = require('http');
+const http = require('http');
 const express = require('express');
 const app = express();
 app.get("/", (request, response) => {
@@ -20,7 +20,7 @@ const client = new Commando.Client({
     disableEveryone: true,
     unknownCommandResponse: false
 });
-const token = process.env.Token
+const token = process.env.TOKEN
 
 
 
@@ -81,6 +81,7 @@ client.registry
 	.registerGroup('bot', 'Bot')	
 	.registerGroup('music', 'Music')
   .registerGroup('loli', 'Loli')
+  .registerGroup('arifureta', 'Arifureta')
 	.registerDefaults()
 	.registerCommandsIn(path.join(__dirname, 'commands'));
 client.login(token);

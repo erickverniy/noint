@@ -1,9 +1,6 @@
 const Commando = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
-const client = new Commando.Client({
-    owner: '193626196401979392',
-    commandPrefix: 'e@'
-});
+const client = new Commando.Client();
 
 module.exports = class ReportCommand extends Commando.Command {
     constructor(client) {
@@ -15,7 +12,7 @@ module.exports = class ReportCommand extends Commando.Command {
             args: [
                 {
                     key: 'text',
-                    prompt: 'What text would you like the bot to say?',
+                    prompt: 'What do you want to report to Erick?',
                     type: 'string'
                 }
             ]
@@ -27,9 +24,9 @@ module.exports = class ReportCommand extends Commando.Command {
     const embed = new RichEmbed()
     .setAuthor(msg.author.username, msg.author.displayAvatarURL)
     .setDescription(text)
-    .setFooter("send from" + msg.channel.id)
-    this.client.channels.get('399747608484118528').send({embed})
+    .setFooter("send from " + msg.channel.id)
+    this.client.channels.get('465447623831322654').send({embed})
     msg.reply("The report has been sent! Thank You");
-
+    msg.delete();
     }
 };

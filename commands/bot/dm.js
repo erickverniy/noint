@@ -6,7 +6,9 @@ module.exports = class DMCommand extends Commando.Command {
             name: 'dm',
             group: 'bot',
             memberName: 'dm',
+            examples: ['y!dm [User] [content]'],
             description: 'DM a user',
+          guildOnly: true,
             args: [ 
               { key: 'user', 
                prompt: 'Which user do you want to send the DM to?', 
@@ -17,7 +19,13 @@ module.exports = class DMCommand extends Commando.Command {
              type: 'string' } ]
         });    
 	}
+  
+  hasPermission(msg) {
+		return this.client.isOwner(msg.author) || msg.member.hasPermission('ADMINISTRATOR');
+	}
 
-    run(msg, { user, content }) { return user.send(content);
+    run(msg, { user, content }) {
+      msg.reply("I have sent the message")
+      return user.send(content);   
     }
 };
