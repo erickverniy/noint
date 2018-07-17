@@ -6,6 +6,7 @@ module.exports = class Waifu2Command extends Command {
         super(client, {
             name: 'user-waifu',
             group: 'fun',
+            guildOnly: true,
             memberName: 'user-waifu',
             description: 'Rate your Waifu(user)!',
             args: [

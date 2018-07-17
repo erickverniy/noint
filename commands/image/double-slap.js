@@ -4,6 +4,7 @@ class DoubleSlapCommand extends Commando.Command {
     constructor(client){
         super(client, {
             name: "double-slap",
+          guildOnly: true,
             aliases: ['slap', 'multi-slap'],
             group: "image",
             memberName: "double-slap",

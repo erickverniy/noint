@@ -6,6 +6,7 @@ class RoastCommand extends Commando.Command {
             name: "roast",
             group: "image",
             memberName: "roast",
+          guildOnly: true,
             description: "Roast someone to death!",
             args: [
 				{
