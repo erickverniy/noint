@@ -1,3 +1,4 @@
+/*
 const http = require('http');
 const express = require('express');
 const app = express();
@@ -9,6 +10,7 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
+*/
 
 const Commando = require('discord.js-commando');
 const path = require('path');
@@ -16,7 +18,7 @@ const sqlite = require('sqlite');
 const oneLine = require('common-tags').oneLine;
 const client = new Commando.Client({
     owner: '193626196401979392',
-    commandPrefix: 'y!',
+    commandPrefix: 'n!',
     disableEveryone: true,
     unknownCommandResponse: false
 });
