@@ -9,7 +9,8 @@ class InviteMeCommand extends Commando.Command {
         });
     }
 
-    async run(message, args) {
+    async run(message, args, msg) {
+      //msg.say("I am Yue. First wife of the demon king!!")
         message.reply("https://discordapp.com/api/oauth2/authorize?client_id=463955524438720523&permissions=8&scope=bot");
     }
 }

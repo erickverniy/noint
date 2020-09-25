@@ -31,17 +31,8 @@ module.exports = class AboutCommand extends Commando.Command {
                     inline: false
                 },
                 {
-                    name: 'Stats',
-                    value: stripIndents`
-                    • Lv:    82
-                    • Strength:  220
-                    • Vitality:  450
-                    • Resist:    100
-                    • Agility:   220
-                    • Magic: 9180
-                    • Magic R.:  9320
-                    • Job Class: Sorceress (Miko)
-                    • Title(s): Vampire Noble
+                    name: 'info',
+                    value: stripIndents` Named after the Female protag of Arifureta Light novel Series.
                     `,
                     inline: false
                 }

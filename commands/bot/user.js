@@ -38,6 +38,8 @@ module.exports = class UserInfoCommand extends commando.Command {
 			 • Created at: ${user.createdAt}${user.bot ? '\n • Is a bot account' : ''}
 			 • Status: ${user.presence.status}
 			 • Game: ${user.presence.game ? user.presence.game.name : 'None'}
+       • Avatar URL: ${user.avatarURL}
 		`);
+    
 	}
 };

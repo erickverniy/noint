@@ -31,9 +31,10 @@ module.exports = class PlaySongCommand extends Command {
 				}
 			]
 		});
+    const yttoken = process.env.YTTOKEN
 
 		this.queue = new Map();
-		this.youtube = new YouTube("AIzaSyAec_dlmQKVGfX3dIe2pfPESjTWgw3R-zY");
+		this.youtube = new YouTube(yttoken);
 	}
 
 	async run(msg, args) {

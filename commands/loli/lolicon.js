@@ -28,7 +28,8 @@ module.exports = class LoliConCommand extends Commando.Command {
       if (member.nickname == null) {var name = user.username} else 
       {var name = member.nickname}
         snek.get("https://i.imgur.com/9UkaSyd.jpg").then(r => {
-          const canvas = new Canvas(617, 319);
+          const canvas = Canvas.createCanvas(617, 319);
+          //const canvas = new Canvas(617, 319);
           const ctx = canvas.getContext('2d');
           const img_bg = new Canvas.Image();
           img_bg.onload = function () {

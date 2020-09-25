@@ -13,6 +13,7 @@ class FlipCommand extends Commando.Command {
     async run(message, args) {
         const embed = new RichEmbed()
         .setImage("https://i.imgur.com/0N6PmDW.gif")
+        .addBlankField(true)
         .addField("(╯°□°）╯︵ ┻━┻")
         message.channel.send({embed});
     }

@@ -1,19 +1,19 @@
 const { Command } = require('discord.js-commando');
 const { RichEmbed } = require('discord.js');
 
-module.exports = class Waifu2Command extends Command {
+module.exports = class RateUserCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'user-waifu',
+            name: 'rate-user',
             group: 'fun',
             guildOnly: true,
             memberName: 'user-waifu',
-            description: 'Rate your Waifu(user)!',
+            description: 'Rate another member of the server!',
             args: [
 				{
 					key: 'member',
 					label: 'user',
-					prompt: 'Who is your waifu(user)?',
+					prompt: 'Who do you want to rate?',
 					type: 'member'
 				}
             ]
@@ -26,6 +26,6 @@ module.exports = class Waifu2Command extends Command {
         //const { text } = args;
         const rate = Math.floor(Math.random() * 12);
 
-        msg.say("I would rate your waifu(user) " + '`' + user.username + '` ' + rate + '/10');
+        msg.say("I would rate " + '`' + user.username + '` ' + rate + '/10');
     }
 };

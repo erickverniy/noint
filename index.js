@@ -22,9 +22,6 @@ const client = new Commando.Client({
 });
 const token = process.env.TOKEN
 
-
-
-
 client.on('ready', () => {
          client.user.setActivity('y!help command', ['Playing']); 
 });
@@ -51,8 +48,7 @@ client
 	.on('commandPrefixChange', (guild, prefix) => {
 		console.log(oneLine`
 			Prefix ${prefix === '' ? 'removed' : `changed to ${prefix || 'the default'}`}
-			${guild ? `in guild ${guild.name} (${guild.id})` : 'globally'}.
-		`);
+			${guild ? `in guild ${guild.name} (${guild.id})` : 'globally'}`);
 	})
 	.on('commandStatusChange', (guild, command, enabled) => {
 		console.log(oneLine`
@@ -76,11 +72,13 @@ client.setProvider(
 
 
 client.registry
+  .registerGroup('nsfw', 'NSFW')
 	.registerGroup('fun', 'Fun')
 	.registerGroup('image', 'Image')
 	.registerGroup('bot', 'Bot')	
 	.registerGroup('music', 'Music')
   .registerGroup('loli', 'Loli')
+  .registerGroup('devonly', 'Devonly')
   .registerGroup('arifureta', 'Arifureta')
 	.registerDefaults()
 	.registerCommandsIn(path.join(__dirname, 'commands'));

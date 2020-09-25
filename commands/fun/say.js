@@ -16,6 +16,9 @@ module.exports = class SayCommand extends Commando.Command {
             ]
         });    
 	}
+  hasPermission(msg) {
+		return this.client.isOwner(msg.author) || msg.member.hasPermission('MANAGE_MESSAGES');
+	}
 
     run(msg, args) {
         const { text } = args;

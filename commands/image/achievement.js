@@ -14,7 +14,7 @@ module.exports = class AchievementCommand extends Commando.Command {
           args: [
                 {
                     key: 'text',
-                    prompt: 'What text would you like the bot to say?',
+                    prompt: 'What text would you like the bot to put in your achievement?',
                     type: 'string'
                 }
             ]
@@ -23,20 +23,24 @@ module.exports = class AchievementCommand extends Commando.Command {
 
     run(msg, args) {
       const { text } = args;
+      if (text.length > 27) {
+        msg.reply('The text exceeded the maximum number of characters allowed. Maximum number of charachers is 27')} else {
         snek.get("https://i.imgur.com/fztTtvm.png").then(r => {
-          const canvas = new Canvas(388, 64);
+          const canvas = Canvas.createCanvas(388, 64);
+          //const canvas = new Canvas(388, 64);
           const ctx = canvas.getContext('2d');
           const img_bg = new Canvas.Image();
           img_bg.onload = function () {
             ctx.drawImage(img_bg, 0, 0, 388, 64);
             ctx.font = "20px Arial";
             args = text;
-            ctx.fillStyle = "#ffffff";
-            ctx.textAlign="right";
-            ctx.fillText("          " + args, 170 - ctx.measureText(args).width / 0 , 52);
+            ctx.fillStyle = "white";
+            //ctx.textAlign = "center";
+            ctx.fillText("          " + args, 170 - ctx.measureText(args).width /  30 , 52);
             msg.channel.send("", {file: {attachment:canvas.toBuffer()}});
           };
           img_bg.src = r.body;
         });
+      }
       }
 };

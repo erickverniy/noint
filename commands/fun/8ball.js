@@ -20,19 +20,33 @@ module.exports = class ballCommand extends Command {
     }
 
     run(msg, args) {
-        const { text } = args;
-        var answer = [
-            "No",
-            "Yes",
-            "Ask someone else",
-            "Ask Erick",
+      var answer = [
+            "As I see it, yes",
+            "Ask again later",
+            "Better not tell you now",
+            "Cannot predict now",
+            "Concentrate and ask again",
+            "Don’t count on it",
+            "It is certain",
+            "It is decidedly so",
+            "Most likely",
+            "My reply is no",
+            "My sources say no",
+            "Outlook not so good",
+            "Outlook good",
+            "Reply hazy, try again",
+            "Signs point to yes",
+            "Very doubtful",
             "Without a doubt",
-            "Error Answer not Found",
-            "There is always a possibility",
-            "Don't give up",
-            "Have you tried turing it off and on again?",
+            "Yes",
+            "Yes – definitely",
+            "You may rely on it"
         ]
 
-        msg.say("`" + text + "`" + " " + answer[Math.floor(Math.random() * answer.length)] + "," + " " + msg.author.username);
+        const { text } = args;
+        if(text === "who is the pedo?" || text === "who is the pedophile?") {
+          msg.say("@Alter(m)#5722 is the pedo")
+        } else {  msg.say("`" + text + "`" + " " + answer[Math.floor(Math.random() * answer.length)] + "," + " " + msg.author.username);
+        }
     }
 };
